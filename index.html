@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <title>pause animation with animation-play-state</title>
+  <style>
+    .frame {
+      border: 1px solid #999;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 200px;
+    }
+    .text {
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-name: slide;
+      animation-timing-function: linear;
+      margin: 0;
+      position: relative;
+      white-space: nowrap;
+    }
+    @keyframes slide {
+      from {
+        transform: translateX(200px);
+      }
+      to {
+        transform: translateX(-400px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <label><input class="checkbox" type="checkbox">pause</label>
+  <div class="frame">
+    <p class="text">The quick brown fox jumps over the lazy dog</p>
+  </div>
+  <label class="state"></label>
+  <script src="jquery-2.1.4.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
